@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Discord Sunucusu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.4);
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+    }
+
+    .server-logo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(0,0,0,0.7);
+      margin-bottom: 20px;
+    }
+
+    .server-name {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      background-color: #5865F2;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .button:hover {
+      background-color: #4752c4;
+    }
+  </style>
+</head>
+<body onclick="enableAudio()">
+
+  <!-- Video Arka Plan -->
+<video id="bgVideo" class="video-bg" autoplay loop muted>
+  <source src="./36st.mp4" type="video/mp4">
+</video>
+
+  <!-- İçerik -->
+  <div class="content">
+    <img class="server-logo" src="./ChatGPT Image 12 Haz 2025 14_59_43.png" alt="Sunucu Logosu">
+    <div class="server-name"></div>
+    <button class="button" onclick="window.location.href='https://discord.gg/j7E4WaHG'">Discord</button>
+  </div>
+
+  <!-- JavaScript ile sesi açma -->
+  <script>
+    function enableAudio() {
+      const video = document.getElementById('bgVideo');
+      video.muted = false;
+      video.volume = 0.5; // İstersen 1.0 yap
+      video.play();
+    }
+  </script>
+
+</body>
+</html>
